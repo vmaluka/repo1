@@ -1,0 +1,28 @@
+<html style='background-color: black'>
+  <div id="my_bouncing_box" style= "background-color: blue; border-radius: 3px; position: absolute; left: 0px; top: 0px;
+           min-width: 100px; min-height: 100px; text-align: center; font-weight: bold; color: #999;" >vma</div>
+  <script type="text/javascript">
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    var wd = 100;
+    var hd = 100;
+    var stepw = 1;
+    var steph = 1;
+    var l = 0;
+    var t = 0;
+  function move(){
+    var div = document.getElementById('my_bouncing_box');
+	 if (l < 0) {stepw = 1};
+	 if (l >= w - wd) {stepw = -1};
+	 if (t < 0) {steph = 1};
+	 if (t >= h - hd) {steph = -1};
+	l += stepw;
+	t += steph;
+	 div.style.left = l;
+	 div.style.top = t;
+  };
+  function bounce(){setInterval(move,10)};
+  bounce();
+//console.log(w,h,);
+  </script>
+</html>
